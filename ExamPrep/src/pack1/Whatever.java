@@ -91,13 +91,27 @@ public class Whatever {
  side note: if u tell use how long pass has to be its easier
  to crack since hacker knows where to start.
  _________________________________________________________
- P-problem:
+ GRASP maybe?
+ 
+ info expert:
+ 
+ skaper:
+ 
+ ...
+ __________________________________________________________
+ P-problem: 
  
  NP:
  
  NPC:
  
  NP-hard:
+ 
+ Tilnærmings algoritme: p(n) >= max( C / C* , C* /C ) 
+ 
+ Tilnærmings rate: p(n), 1 = perfekt
+ 
+ NP/NPC/NP-hard problemer som må kunnes?:
  _________________________________________________________
   Attribute vs Parameter
  
@@ -110,11 +124,11 @@ public class Whatever {
 fremtidige forespørsler ved at nettlesersesjonen identifiseres med en
 sesjonscookie (f.eks. jsessionid)
 
-2. Man kan sende med informasjonen som cookies (Set-Cookie:-headeren)
+  2. Man kan sende med informasjonen som cookies (Set-Cookie:-headeren)
 som klienten lagrer og sender tilbake ved fremtidige forespørsler til
 samme nettsted.
-
-3. Ved en redirect (302/303) kan man legge ved den ekstra
+ 
+  3. Ved en redirect (302/303) kan man legge ved den ekstra
 informasjonen i redirect-URLen (gitt i Location:-headeren).
 ______________________________________________________________________	
 	Poenget med PRG(Post-Get-Redirect):
