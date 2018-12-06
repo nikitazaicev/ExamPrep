@@ -85,7 +85,8 @@ public class Whatever {
  several inputs can give u same output, SALT can make it more likely
  but even then its collisions are mostly accidential.
  
-   
+ rest is irrelevant due to: 
+ "Dere vil ikke blitt bedt om å programmere noe her, men må kunne forklare i detalj hvordan ting virker og hvorfor vi gjør de ulike tingene".
  
  side note: if u tell use how long pass has to be its easier
  to crack since hacker knows where to start.
