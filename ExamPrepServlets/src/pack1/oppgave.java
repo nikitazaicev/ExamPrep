@@ -71,6 +71,7 @@ public class oppgave extends HttpServlet {
 			}else response.sendRedirect("/login?feilmelding=feilPass");
 		}
 //________________________________________________________________________________________________		
+		
 		if(LoggInntUtil.erInnlogget(request)) {
 			request.getRequestDispatcher("jsp.jsp").forward(request, response);
 		}else response.sendRedirect("login?feilmelding=WHATEVER");
