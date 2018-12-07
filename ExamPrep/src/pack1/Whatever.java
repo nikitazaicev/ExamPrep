@@ -99,6 +99,8 @@ public class Whatever {
  
  ...
  ___________________________________________________________________________
+ Init parametere og XML?
+ __________________________________________________________________________
  Alt er enten avgjørelse problem(ja/nei) eller Optimalisering 
  
  P-problem: can be solved in polynomial time. 
@@ -175,6 +177,10 @@ Start på doGet/ samme dritt med doPost:
  protected void doGet(
  HttpServletRequest request, HttpServletResponse response)
  throws ServletException, IOException {
+ 
+Andre ting:
+request.getParameter
+
  _____________________________________________________________________
  Request gjennom jsp:	
  
@@ -197,6 +203,9 @@ Start på doGet/ samme dritt med doPost:
  Ny måte å adde cookies på?
  
  CookieHjelper.addCookieToResponse(response, "nick", nick);
+ CookieHjelper.getCookieFromRequest(request, "nick"); type String
+ Cookies cookies = new Cookies[]{new cookie("navn", "innhold")}
+ 
  ___________________________________________________________________
   Lambda ting:
  
@@ -218,6 +227,11 @@ Start på doGet/ samme dritt med doPost:
 	private Function<Double, Double> f;
 _________________________________________________________________________
 JSP stuff:
+
+<form action="registrer" method="post"> --- action er navnet på servleten get henter 
+jsp fra. method er method brukt i den samme servleten
+
+<c:out value='${skjema.mobil} --- c out escaper HTML 
 
 <c:forEach var = "i" begin="1" end = "5">
 <form action="anmelde" method="post"><input type="radio" name="rating" value="${i}"></form>

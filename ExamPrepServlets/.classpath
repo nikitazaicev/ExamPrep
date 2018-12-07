@@ -10,5 +10,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/mitja/Downloads/apache-tomee-8.0.0-M1-webprofile/apache-tomee-webprofile-8.0.0-M1/lib/servlet-api.jar"/>
 	<classpathentry kind="lib" path="C:/Users/mitja/Downloads/jstl-1.2.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>
