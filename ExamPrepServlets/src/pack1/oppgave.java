@@ -1,6 +1,8 @@
 package pack1;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.Cookie;
@@ -75,6 +77,8 @@ public class oppgave extends HttpServlet {
 		if(LoggInntUtil.erInnlogget(request)) {
 			request.getRequestDispatcher("jsp.jsp").forward(request, response);
 		}else response.sendRedirect("login?feilmelding=WHATEVER");
+		List<Melding> meldinger = meldingEAO.hentNSisteMeldinger(VISNINGSANTALL);
+		request.setAttribute("meldinger", meldinger);
 		
 
 //__________________________________________________________________________________________________
@@ -108,4 +112,15 @@ public class oppgave extends HttpServlet {
 		return false;
 	}
 
+	private void logginn(HttpServletRequest request, Bruker bruker) {
+	
+		HttpSession s = request.getSession(false);
+		
+		if(s != null) {
+			s.invalidate();
+		}
+		s = request.getSession(true);
+		s.setAttribute("bruker", bruker);
+	}
+	
 }

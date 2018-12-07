@@ -206,6 +206,12 @@ request.getParameter
  CookieHjelper.getCookieFromRequest(request, "nick"); type String
  Cookies cookies = new Cookies[]{new cookie("navn", "innhold")}
  
+ cookiehjelper.addCookieToResponse(response, "User", "Atle Patle");
+ Cookie cookie = response.getCookies()[0];
+ 
+ request.setCookies(
+ new Cookie[]{new Cookie("User", "Atle+Patle")});
+ String cookie = cookiehjelper.getCookieFromRequest(request, "User");
  ___________________________________________________________________
   Lambda ting:
  
