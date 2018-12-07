@@ -10,6 +10,5 @@ function displayDate(){
 	
 }
 function  hideDate(){
-	let output = document.getElementById("demo").textContent;
 	document.getElementById("demo").innerHTML = firstValue;
 }

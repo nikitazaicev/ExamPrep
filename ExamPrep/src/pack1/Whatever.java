@@ -47,7 +47,7 @@ public class Whatever {
  from user account database to a list of users with this hash?
  da fuck is that supposed to mean?
  Basically same shit as normal lookup just that u check many users
- hashes at the ssame time.
+ hashes at the same time.
  Effective since many users have same passwords many places
  Should be pointless if attacker hasnt hacked anything before but idk
  
@@ -77,7 +77,7 @@ public class Whatever {
  dont Double hash/whacky hash(combining several hashes together): 
  "CAN" make it harder since attacker doesnt know which hash to
  precompute + can take longer time.
- "BUT" atacker usually has source code and knows what to use...
+ "BUT" attacker usually has source code and knows what to use...
  meh not so important...
  
  Hash collisions:
@@ -88,9 +88,9 @@ public class Whatever {
  rest is irrelevant due to: 
  "Dere vil ikke blitt bedt om å programmere noe her, men må kunne forklare i detalj hvordan ting virker og hvorfor vi gjør de ulike tingene".
  
- side note: if u tell use how long pass has to be its easier
+ side note: if u tell user how long pass has to be its easier
  to crack since hacker knows where to start.
- _________________________________________________________
+ ___________________________________________________________________________
  GRASP maybe?
  
  info expert:
@@ -98,20 +98,43 @@ public class Whatever {
  skaper:
  
  ...
- __________________________________________________________
- P-problem: 
+ ___________________________________________________________________________
+ Alt er enten avgjørelse problem(ja/nei) eller Optimalisering 
  
- NP:
+ P-problem: can be solved in polynomial time. 
  
- NPC:
+ NP: kan verifiseres i polynomisktid i.e kan sjekkes i polynomisk tid om løsning er
+ korrekt.
  
- NP-hard:
+ NPC: de vanskeligste NP, ikke funnet løsning i polynomisk tid ennå
+ reduser problem til NPC for å bevise at det er vanskelig å løse
+ BARE AVJØRELSEPROBLEM fra NP
+ 
+ NP-hard: NPC + annet NPC relatert dritt, men som er ikke med i NP
+ alle NPC er NP-harde. trenger IKKE være AVGJØRELSEPROBLEM
+ 
+ If P != NP, then NP-hard problems cannot be solved in polynomial time.
  
  Tilnærmings algoritme: p(n) >= max( C / C* , C* /C ) 
  
  Tilnærmings rate: p(n), 1 = perfekt
  
  NP/NPC/NP-hard problemer som må kunnes?:
+ 
+ NPC: 
+ 
+ Vertex cover: 
+ Clique:
+ Hamiltonian path: 
+ Traveling salesman: 
+ Dominating set:
+ Graph color set: 
+ 
+ NP:
+ Travelling salesman
+ 
+ NP-hard:
+ Traveling salesman
  _________________________________________________________
   Attribute vs Parameter
  
@@ -122,7 +145,7 @@ public class Whatever {
   
   1. Man kan lagre informasjonen på tjeneren og hente den frem ved
 fremtidige forespørsler ved at nettlesersesjonen identifiseres med en
-sesjonscookie (f.eks. jsessionid)
+sesjonscookie (f.eks. sessionid)
 
   2. Man kan sende med informasjonen som cookies (Set-Cookie:-headeren)
 som klienten lagrer og sender tilbake ved fremtidige forespørsler til
@@ -193,5 +216,12 @@ Start på doGet/ samme dritt med doPost:
 	return getAarslonn();}
 	
 	private Function<Double, Double> f;
-________________________________________________________________
+_________________________________________________________________________
+JSP stuff:
+
+<c:forEach var = "i" begin="1" end = "5">
+<form action="anmelde" method="post"><input type="radio" name="rating" value="${i}"></form>
+<img scr="bilder/rating${i}.png"/>
+</c:forEach>
+_________________________________________________________________________
  */
