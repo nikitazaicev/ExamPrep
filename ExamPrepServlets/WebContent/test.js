@@ -6,3 +6,4 @@ var text = {"kontonavn":"Brukskonto","saldo":23254.9,
 var obj = JSON.parse(text);
 document.getElementById("demo").innerHTML =
 	obj.employees[1].kontonavn + " " + obj.employees[1].saldo;
+

@@ -95,9 +95,13 @@ public class Whatever {
  
  info expert: ansvar å hente info om objekt eller avgjøre ansvar
  
- skaper: anvsar for å skape et objekt.
+ skaper: anvsar for å skape et objekt. Skaper hvis:
+Instances of B contain or compositely aggregate instances of A
+Instances of B record instances of A
+Instances of B closely use instances of A
+Instances of B have the initializing information for instances of A and pass it on creation.
  
- kontroller: Bindeledd mellom backend og UI.
+ kontroller: Bindeledd mellom backend og UI. first object beyond the UI that coordinates a system operation
  
  lav kopling: Minst mulig avhengighet mellom klassene.
  
@@ -105,9 +109,10 @@ public class Whatever {
  
  Polymorphism: different subclasses. 
  
- Fabrication: Lage extra klasser for å forenkle systemet.
+ Fabrication: Lage extra klasser for å forenkle systemet. 
+  				made up to achieve low coupling, high cohesion
  
- Indirection: fabrication
+ Indirection: fabrication. supports low coupling 
  
  Protecc from variation: sier seg selv
  ___________________________________________________________________________
@@ -146,20 +151,18 @@ ____________________________________________________________           V
  
  NP/NPC/NP-hard problemer som må kunnes?:
  
+ NP:
+ 
  NPC: 
  
- Vertex cover: 
- Clique:
- Hamiltonian path: 
- Traveling salesman: 
- Dominating set:
- Graph color set: 
- 
- NP:
- Travelling salesman
+ Vertex cover: noder som med sine kanter dekker alle andre noder. 
+ Dominating set:: noder som dekker alle andre nabo noder i hele grafen
+ Hamiltonian path:  path in an undirected or directed graph that visits each vertex exactly once 
+ clique. i.e. Given an undirected graph, 
+ 			  what is the largest complete graph which is a subgraph of the graph.
  
  NP-hard:
- Traveling salesman
+ Traveling salesman shortest possible route that visits each node and returns to the origin node?
  _________________________________________________________
   Attribute vs Parameter
  
@@ -194,6 +197,8 @@ ___________________________________________________________________
  Hva egenlig er EJB?
 	
 	@EJB
+	bare et objekt man kan bruke som attribut i servleten eller JSP.
+	må implementere serializable.
 ___________________________________________________________________ 
 Start på doGet/ samme dritt med doPost:	
  
@@ -256,6 +261,10 @@ session got only set/get Attribute
 	return getAarslonn();}
 	
 	private Function<Double, Double> f;
+_________________________________________________________________________
+Threads:
+
+
 _________________________________________________________________________
 Streams:
 
