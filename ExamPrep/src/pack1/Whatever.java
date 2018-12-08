@@ -54,9 +54,6 @@ public class Whatever {
  Rainbow tables: smaller lookuptables, can store more hashes
  sacrifices cracking speed. idk
  
- Probably everything im not sure about aint gonna be asked 
- detailed in exam cuz there is no better explanation in he link
- 
  Adding salt:
  
  Lookup/Rainbow tables work cuz same input always gives same output
@@ -264,7 +261,7 @@ session got only set/get Attribute
 _________________________________________________________________________
 Threads:
 
-
+!!!
 _________________________________________________________________________
 Streams:
 
