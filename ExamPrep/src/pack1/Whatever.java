@@ -91,27 +91,29 @@ public class Whatever {
  side note: if u tell user how long pass has to be its easier
  to crack since hacker knows where to start.
  ___________________________________________________________________________
- GRASP maybe?
+ GRASP 
  
  info expert: ansvar å hente info om objekt eller avgjøre ansvar
  
- skaper: anvsar for å skape et objekt
+ skaper: anvsar for å skape et objekt.
  
- kontroller: Bindeledd mellom backend og UI
+ kontroller: Bindeledd mellom backend og UI.
  
- lav kopling: 
+ lav kopling: Minst mulig avhengighet mellom klassene.
  
- Høy samhørighet: 
+ Høy samhørighet: Klassene skal kun gjøre ting som de absolut maa.
  
- Polymorphism: different subclasses 
+ Polymorphism: different subclasses. 
  
- Fabrikation:
+ Fabrication: Lage extra klasser for å forenkle systemet.
  
- Indirection:
+ Indirection: fabrication
  
- Protecc from variation:
+ Protecc from variation: sier seg selv
  ___________________________________________________________________________
  Init parametere og XML?
+ 
+ 
  __________________________________________________________________________
  Alt er enten avgjørelse problem(ja/nei) eller Optimalisering 
  
@@ -272,5 +274,12 @@ jsp fra. method er method brukt i den samme servleten
 <form action="anmelde" method="post"><input type="radio" name="rating" value="${i}"></form>
 <img scr="bilder/rating${i}.png"/>
 </c:forEach>
+<c:set> -  <c:set var = "salary" scope = "session" value = "${2000*2}"/>
+<c:if> -  <c:if test = "${salary > 2000}">
+<c:choose>/<c:when>/<c:otherwise> - <c:choose><c:when test = "${salary > 1000}"></c:when>
+												<c:otherwise></c:otherwise> </c:choose>
+<c:out> -   <c:out value = "${'<tag> , &'}"/> escapes HTML tags needs function testing 
+meaning mockrequests etc. can be avoided by using String.EscapeHTML and only need unit testing then
+meaning assertequals(string, EscapeHTML(String))
 _________________________________________________________________________
  */

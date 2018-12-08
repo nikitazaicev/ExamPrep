@@ -10,7 +10,7 @@ import java.util.function.Function;
 /**
  */
 
-public class Ansatt {
+public class Dummy {
 private String fornavn;
 private String etternavn;
 private String gender;
@@ -20,17 +20,17 @@ private Function<Double, Double> f;
 
 public static void main(String[] args) {
 	
-	List<Ansatt> list = Arrays.asList(
-			new Ansatt( "navn1",  "etternavn1",  "m", "", 12),
-			new Ansatt( "navn2",  "etternavn2",  "m", "sjef", 123),
-			new Ansatt( "navn3",  "etternavn3",  "k", "", 1234),
-			new Ansatt( "navn4",  "etternavn4",  "k", "sjef", 12345),
-			new Ansatt( "navn5",  "etternavn5",  "u", "", 123456)
+	List<Dummy> list = Arrays.asList(
+			new Dummy( "navn1",  "etternavn1",  "m", "", 12),
+			new Dummy( "navn2",  "etternavn2",  "m", "sjef", 123),
+			new Dummy( "navn3",  "etternavn3",  "k", "", 1234),
+			new Dummy( "navn4",  "etternavn4",  "k", "sjef", 12345),
+			new Dummy( "navn5",  "etternavn5",  "u", "", 123456)
 			);
 
 	
 }
-public Ansatt(String fornavn, String etternavn, String gender, String stilling, double aarslonn) {
+public Dummy(String fornavn, String etternavn, String gender, String stilling, double aarslonn) {
 	this.fornavn = fornavn;
 	this.etternavn = etternavn;
 	this.gender = gender;
@@ -45,7 +45,7 @@ public String toString() {
 			+ ", aarslonn=" + aarslonn + "]";
 }
 
-public Ansatt() {
+public Dummy() {
 	this.fornavn = null;
 	this.etternavn = null;
 	this.gender = null;

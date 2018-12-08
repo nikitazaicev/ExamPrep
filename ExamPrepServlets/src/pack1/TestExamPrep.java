@@ -27,5 +27,29 @@ public class TestExamPrep<MockHttpServletResponse, MockHttpServletRequest> {
 		// TODO Auto-generated method stub
 		return true;
 	}
+	
+	@Test
+	public void cookieSkalKunneHentesUtDekodetFraRequest() {
+	//Arrange
+	 request.setCookies(
+	new Cookie[]{new Cookie("User", "Atle+Patle")});
+	//Act
+	String cookie
+	= cookiehjelper.getCookieFromRequest(request, "User");
+	//Assert
+	assertEquals("Atle Patle", cookie);
+	}
+	
+	@Test
+	public void cookieBlirLagretKodetOgTidsmerket() {
+	//Act
+	cookiehjelper.addCookieToResponse(
+	response, "User", "Atle Patle");
+	//Assert
+	Cookie cookie = response.getCookies()[0];
+	assertEquals("User", cookie.getName());
+	assertEquals("Atle+Patle", cookie.getValue());
+	assertEquals(60*60*24*365, cookie.getMaxAge());
+	}
 
 }
