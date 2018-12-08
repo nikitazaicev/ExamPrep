@@ -91,7 +91,7 @@ public class oppgave extends HttpServlet {
 		}
 		if(Eksistere(nick)) {
 			request.setAttribute("feilkode", "2");
-
+			
 			response.sendRedirect("refresh");
 		}
 		
@@ -119,8 +119,10 @@ public class oppgave extends HttpServlet {
 		if(s != null) {
 			s.invalidate();
 		}
+		
 		s = request.getSession(true);
 		s.setAttribute("bruker", bruker);
+
 	}
 	
 }

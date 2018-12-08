@@ -93,15 +93,36 @@ public class Whatever {
  ___________________________________________________________________________
  GRASP maybe?
  
- info expert:
+ info expert: ansvar å hente info om objekt eller avgjøre ansvar
  
- skaper:
+ skaper: anvsar for å skape et objekt
  
- ...
+ kontroller: Bindeledd mellom backend og UI
+ 
+ lav kopling: 
+ 
+ Høy samhørighet: 
+ 
+ Polymorphism: different subclasses 
+ 
+ Fabrikation:
+ 
+ Indirection:
+ 
+ Protecc from variation:
  ___________________________________________________________________________
  Init parametere og XML?
  __________________________________________________________________________
  Alt er enten avgjørelse problem(ja/nei) eller Optimalisering 
+ 
+ ____________________________________________________________
+| Problem Type | Verifiable in P time | Solvable in P time | Increasing Difficulty
+___________________________________________________________|           |
+| P            |        Yes           |        Yes         |           |
+| NP           |        Yes           |     Yes or No *    |           |
+| NP-Complete  |        Yes           |      Unknown       |           |
+| NP-Hard      |     Yes or No **     |      Unknown ***   |           |
+____________________________________________________________           V
  
  P-problem: can be solved in polynomial time. 
  
@@ -179,8 +200,10 @@ Start på doGet/ samme dritt med doPost:
  throws ServletException, IOException {
  
 Andre ting:
-request.getParameter
-
+request got all gets
+request got only setAttribute
+response got no sets 
+session got only set/get Attribute
  _____________________________________________________________________
  Request gjennom jsp:	
  
@@ -231,6 +254,12 @@ request.getParameter
 	return getAarslonn();}
 	
 	private Function<Double, Double> f;
+_________________________________________________________________________
+Streams:
+
+stream.map(x -> x*2) stream blir gjørt om til x ganger 2 istedenfor
+stream.map(x -> x.getSomething) stream blir gjørt om til (mapped til)
+somthing variabel istedenfor x objektet
 _________________________________________________________________________
 JSP stuff:
 
