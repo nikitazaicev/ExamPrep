@@ -42,7 +42,7 @@ public class oppgave extends HttpServlet {
 			} else {FinnesActivitet = true;}
 			request.setAttribute("finnesaktivitet", FinnesActivitet);
 		}
-		
+			
 			request.getRequestDispatcher("jsp").forward(request, response);
 		
 //_________________________________________________________________________________

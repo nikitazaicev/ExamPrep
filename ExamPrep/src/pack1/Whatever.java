@@ -3,12 +3,14 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.Function;
+import java.util.stream.Stream;
 
 public class Whatever {
 
 	public static void main(String[] args) {
-	List<Integer> l = Arrays.asList(1,2,3,4,5);
+	List<Integer> l = Arrays.asList(1,1,1,1,1,2,3,4,5);
 	
 	Collections.sort(l, new Comparator<Integer>() {
 
@@ -19,6 +21,11 @@ public class Whatever {
 		}
 		
 	});
+	
+	Stream s = l.stream().sorted();
+	Object nr1 = s.findFirst().get();
+	l.stream().filter(x -> x.intValue()==(int)nr1).forEach(x -> System.out.println(x));
+	
 	Collections.sort(l, (x1,x2) -> x1.compareTo(x2));
 }}
 
@@ -37,7 +44,7 @@ public class Whatever {
  Brute force: try {aaaa,aaab,aaac...}
  
  Dictionary attack: uses some source of data like dictionary
- or a already known database, try {banan,ananas,1234, ...}
+ or an already known database, try {banan,ananas,1234, ...}
  can't prevent those two but can slow it down.
 
  Lookup tables: pre-computes hashes? from pass dictionaries? 
@@ -53,6 +60,7 @@ public class Whatever {
  
  Rainbow tables: smaller lookuptables, can store more hashes
  sacrifices cracking speed. idk
+ using less computer processing time and more storage than a brute-force attack 
  
  Adding salt:
  
@@ -69,7 +77,7 @@ public class Whatever {
  with reuse they can just find SALT and adjust lookup tables.
  
  dont use short SALT:
- if salt is tto short it can be simply bruteforced.
+ if salt is too short it can be simply bruteforced.
  
  dont Double hash/whacky hash(combining several hashes together): 
  "CAN" make it harder since attacker doesnt know which hash to
@@ -114,7 +122,30 @@ Instances of B have the initializing information for instances of A and pass it 
  Protecc from variation: sier seg selv
  ___________________________________________________________________________
  Init parametere og XML?
- 
+   
+   <context-param>
+        <param-name>email</param-name>
+        <param-value>admin@example.com</param-value>
+    </context-param>
+
+    <servlet>
+        <servlet-name>Info Servlet</servlet-name>
+        <servlet-class>com.example.InfoServlet</servlet-class>
+        <!-- This is a servlet init parameter -->
+        <init-param>
+            <param-name>name</param-name>
+            <param-value>John Doe</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Info Servlet</servlet-name>
+        <url-pattern>/test/ShowInfo.do</url-pattern>
+    </servlet-mapping>
+
+Accessing context init parameter in a servlet:
+getServletContext().getInitParameter(“email”);
+Accessing servlet init parameter in a servlet for which it was defined in the deployment descriptor:
+getServletConfig().getInitParameter("name");
  
  __________________________________________________________________________
  Alt er enten avgjørelse problem(ja/nei) eller Optimalisering 
@@ -134,7 +165,7 @@ ____________________________________________________________           V
  korrekt.
  
  NPC: de vanskeligste NP, ikke funnet løsning i polynomisk tid ennå
- reduser problem til NPC for å bevise at det er vanskelig å løse
+ reduser problem til NPC for å bevise at det er vanskelig å løse.
  BARE AVJØRELSEPROBLEM fra NP
  
  NP-hard: NPC + annet NPC relatert dritt, men som er ikke med i NP
