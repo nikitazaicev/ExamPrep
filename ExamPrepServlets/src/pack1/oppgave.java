@@ -1,7 +1,9 @@
 package pack1;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,9 +22,51 @@ Databasehjelper dbh = new Databasehjelper();
 
 @WebServlet("/anmelde")
 public class oppgave extends HttpServlet {
+	
 	private static final long serialVersionUID = 1L;
+	
+	private Map<String, String> feilmeldinger = new HashMap<>();
+	
+	@Override
+	public void init(){
+	feilmeldinger.put("ugyldigRequest", "Ugyldig forespørsel");
+	// ... evt. flere feilmeldinger
+	}
+	
+	@Override
+	protected void doGet(HttpServletRequest request, HttpServletResponse response){
+		
+	String bok_id = request.getParameter("bok_id");
+	
+	if(!isGyldigBokId(bok_id)) {
+		response.sendRedirect("feilservlet?feilmelding=feilwhatever");
+	}else {
+		Bruker bok = BokDaoUsingJpa.finnBok(Integer.parseInt(bok_id));
+		if(bok!=null){
+			request.setAttribute("bok", bok);
+			request.getRequestDispatcher("jsp.jsp").forward(request, response);
+			return;
+		}else {
+			response.sendRedirect("feilservlet?feilmelding=eksistererikke");
+		}	
+	}
+	
+	
+		
+//__________________________________________________________________________________
+	String aarsak = request.getParameter("aarsak");
+	String feilmeldingstekst = feilmeldinger.get(aarsak);
+	if (feilmeldingstekst == null) {
+	feilmeldingstekst = "Ooops. Noe gikk galt";
+	}
+	request.setAttribute("feilmeldingstekst", feilmeldingstekst);
+	request.getRequestDispatcher("WEB-INF/feilmelding.jsp")
+	 .forward(request, response);
+	
+		
+//__________________________________________________________________________________
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 	String feilmelding = Feilmeldinger.finnFeilmeldingFraURL(request);
 	request.setAttribute("felmalding", feilmelding);
 	
@@ -53,6 +97,11 @@ public class oppgave extends HttpServlet {
 		request.setAttribute("feilkode", feilkode);
 		request.getRequestDispatcher("jspnavn.jsp").forward(request, response);
 		
+	}
+
+	private boolean isGyldigBokId(String bok_id) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 
 	@EJB
